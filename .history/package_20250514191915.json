@@ -38,12 +38,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aitorcachero/aicadev-react-active-button"
+    "url": "https://github.com/aitorcachero/aicadev-react-gallery"
   },
   "bugs": {
-    "url": "https://github.com/aitorcachero/aicadev-react-active-button/issues"
+    "url": "https://github.com/aitorcachero/aicadev-react-gallery/issues"
   },
-  "homepage": "https://github.com/aitorcachero/aicadev-react-active-button",
+  "homepage": "https://aicadev-react-gallery.netlify.app/",
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
