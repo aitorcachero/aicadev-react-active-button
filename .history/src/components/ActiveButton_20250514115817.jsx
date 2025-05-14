@@ -1,0 +1,47 @@
+import React, { useRef, useState, useCallback } from 'react';
+
+export default function ActiveButton({ width = 300, activated = false }) {
+  const [active, setActive] = useState(activated);
+  const buttonRef = useRef(null);
+
+  const handleCalculateHeightAndWidth = useCallback(() => {
+    return {
+      height: parseInt(width / 3),
+      width: parseInt(width),
+    };
+  }, [width]);
+
+  const handleClick = () => {
+    console.log(handleCalculateHeightAndWidth().height);
+    setActive(!active);
+    active
+      ? buttonRef?.current?.classList.remove('activatedButton')
+      : buttonRef?.current?.classList.add('activatedButton');
+  };
+
+  return (
+    <div
+      className="active-button"
+      onClick={handleClick}
+      style={{ width: `${width}px` }}
+    >
+      <div
+        className="button-ball"
+        ref={buttonRef}
+        style={{
+          width: `${handleCalculateHeightAndWidth().height}px`,
+          height: '100%',
+          position: 'absolute',
+          left: active
+            ? `${
+                handleCalculateHeightAndWidth().width -
+                handleCalculateHeightAndWidth().height
+              }px`
+            : '4px',
+          bottom: 0,
+          transition: 'left 1s ease-in-out, background-color 1s ease-in-out',
+        }}
+      ></div>
+    </div>
+  );
+}

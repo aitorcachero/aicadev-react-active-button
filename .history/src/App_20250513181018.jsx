@@ -1,0 +1,14 @@
+import './App.css';
+import './styles.css';
+import { ActiveButton } from './components/ActiveButton';
+
+function App() {
+  return (
+    <>
+      <ActiveButton />
+      <p>Hola mundo</p>
+    </>
+  );
+}
+
+export default App;
